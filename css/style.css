@@ -94,6 +94,8 @@ section { position: relative; overflow: hidden; }
   text-transform: uppercase;
 }
 .cover-kicker {
+  position: relative;
+  z-index: 4;
   order: 4;
   align-self: flex-start;
   margin-left: max(1rem, 6vw);
