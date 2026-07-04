@@ -186,6 +186,14 @@ section { position: relative; overflow: hidden; }
   font-size: clamp(1.65rem, 2.8vw, 3.15rem);
   letter-spacing: 0;
 }
+.click-to-open-cn {
+  display: block;
+  margin-top: 0.12em;
+  font-family: "Songti SC", "STSong", "Noto Serif SC", "Source Han Serif SC", serif;
+  font-size: 0.68em;
+  letter-spacing: 0.08em;
+  line-height: 1;
+}
 .wax-seal {
   position: absolute;
   z-index: 5;
@@ -242,12 +250,17 @@ section { position: relative; overflow: hidden; }
   height: 100%;
   object-fit: cover;
 }
-#countdown { text-align: center; color: var(--ivory); }
+#countdown {
+  width: min(100%, 38rem);
+  text-align: center;
+  color: var(--ivory);
+}
 .countdown-numbers {
   font-family: var(--serif);
   font-size: clamp(3rem, 12vw, 8rem);
   letter-spacing: 0.04em;
   line-height: 0.92;
+  white-space: nowrap;
 }
 .colon { opacity: 0.72; }
 .countdown-labels {
@@ -373,7 +386,8 @@ section { position: relative; overflow: hidden; }
   position: absolute;
   display: grid;
   justify-items: center;
-  max-width: 72%;
+  width: 80%;
+  max-width: 18rem;
   line-height: 1.1;
 }
 .date-day, .date-year {
@@ -385,10 +399,17 @@ section { position: relative; overflow: hidden; }
   font-size: clamp(2rem, 6vw, 3.6rem);
 }
 .date-meta {
+  display: grid;
+  gap: 0.12rem;
+  width: 100%;
   margin-top: 0.55rem;
-  font-size: clamp(0.66rem, 1.45vw, 0.88rem);
-  line-height: 1.22;
+  font-size: clamp(0.48rem, 1.55vw, 0.78rem);
+  line-height: 1.18;
   text-align: center;
+}
+.date-meta span {
+  display: block;
+  white-space: nowrap;
 }
 .polaroid {
   background: var(--ivory);
@@ -946,8 +967,17 @@ section { position: relative; overflow: hidden; }
   .cover-rings { width: 78px; right: 6vw; top: 18vh; }
   .cover-title-break { display: block; }
   .cover-kicker { font-size: clamp(1.55rem, 9vw, 2.65rem); }
+  .click-to-open { top: 32%; }
+  .click-to-open-cn {
+    margin-top: 0.05em;
+    font-size: 0.62em;
+  }
   .countdown-numbers { font-size: clamp(2.45rem, 17vw, 4.5rem); }
-  .countdown-labels { gap: 0.35rem; letter-spacing: 0.06em; }
+  .countdown-labels {
+    gap: 0.28rem;
+    font-size: clamp(0.58rem, 2.4vw, 0.8rem);
+    letter-spacing: 0.05em;
+  }
   .names-block h2 { font-size: clamp(2.9rem, 17vw, 4.6rem); }
   .attire-grid {
     grid-template-columns: 1fr;
@@ -977,6 +1007,34 @@ section { position: relative; overflow: hidden; }
   .countdown-scroll {
     width: 40px;
     right: 1rem;
+  }
+}
+
+@media (max-width: 420px) {
+  #countdown {
+    width: calc(100vw - 1.8rem);
+    max-width: 100%;
+  }
+  .countdown-numbers {
+    font-size: clamp(1.8rem, 11.6vw, 3.05rem);
+    letter-spacing: 0.02em;
+  }
+}
+
+@media (max-width: 340px) {
+  .date-meta {
+    font-size: 0.46rem;
+  }
+  #countdown {
+    width: calc(100vw - 1.5rem);
+  }
+  .countdown-numbers {
+    font-size: clamp(1.72rem, 11.4vw, 2.8rem);
+    letter-spacing: 0.01em;
+  }
+  .countdown-labels {
+    font-size: 0.54rem;
+    letter-spacing: 0.03em;
   }
 }
 
